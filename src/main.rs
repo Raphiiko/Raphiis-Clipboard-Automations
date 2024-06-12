@@ -1,3 +1,8 @@
+#![cfg_attr(
+    all(not(debug_assertions), target_os = "windows"),
+    windows_subsystem = "windows"
+)]
+
 use clipboard_master::{CallbackResult, ClipboardHandler, Master};
 use clipboard_win::{formats, get_clipboard, set_clipboard};
 use regex::Regex;
@@ -18,6 +23,11 @@ const REPLACEMENTS: &[(&str, &str)] = &[
 ];
 
 fn main() {
+    println!(
+        "Raphii's Clipboard Automations v{}",
+        env!("CARGO_PKG_VERSION")
+    );
+    println!("Listening for clipboard changes...");
     let result = Master::new(Handler).run();
     if let Err(e) = result {
         eprintln!("Couldn't listen for clipboard changes: {}", e)
@@ -44,7 +54,7 @@ impl ClipboardHandler for Handler {
             match set_clipboard(formats::Unicode, modified.clone()) {
                 Ok(_) => {
                     println!(
-                        "Clipboard content updated.\nPrevious Content: {}\nNew Content: {}",
+                        "Clipboard content updated!\nPrevious Content: {}\nNew Content: {}",
                         content, modified
                     );
                 }
