@@ -113,7 +113,7 @@ dependencies = [
 
 [[package]]
 name = "raphiis-clipboard-automations"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "clipboard-master",
  "clipboard-win",
