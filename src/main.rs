@@ -24,6 +24,7 @@ const REPLACEMENTS: &[(&str, &str)] = &[
         r"\b(http|https)://vm.tiktok.com/([A-Za-z0-9_.-]+)",
         r"https://vm.vxtiktok.com/$2",
     ),
+    (r"\b(http|https)://bsky.app/(.*)", r"https://bskyx.app/$2"),
 ];
 
 fn main() {
