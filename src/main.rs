@@ -24,6 +24,10 @@ const REPLACEMENTS: &[(&str, &str)] = &[
         r"\b(http|https)://vm.tiktok.com/([A-Za-z0-9_.-]+)",
         r"https://vm.vxtiktok.com/$2",
     ),
+    (
+        r"\b(http|https)://(www[.])?pixiv.net/([a-z]{2}/)?artworks/([0-9]+)",
+        r"https://www.pixiv.net/en/artworks/$4",
+    ),
     (r"\b(http|https)://bsky.app/(.*)", r"https://bskyx.app/$2"),
 ];
 
