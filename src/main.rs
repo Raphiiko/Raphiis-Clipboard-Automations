@@ -26,7 +26,7 @@ const REPLACEMENTS: &[(&str, &str)] = &[
     ),
     (
         r"\b(http|https)://(www[.])?pixiv.net/([a-z]{2}/)?artworks/([0-9]+)",
-        r"https://www.pixiv.net/en/artworks/$4",
+        r"https://www.phixiv.net/en/artworks/$4",
     ),
     (r"\b(http|https)://bsky.app/(.*)", r"https://bskyx.app/$2"),
 ];
